@@ -47,7 +47,8 @@ class Form extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-        </label>Phone
+        </label>
+        <label className={styles.label}>Phone
         <input
           type="tel"
           value={this.state.number}
@@ -56,7 +57,8 @@ class Form extends Component {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-        />
+          />
+          </label>
         <button tupe='submit'>Add contact</button>
       </form>
     );

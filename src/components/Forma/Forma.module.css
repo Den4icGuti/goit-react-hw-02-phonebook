@@ -3,4 +3,11 @@
   height: 300px;
   padding: 10px;
   background-color: rgb(56, 63, 153);
+  margin: 0 auto;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
 }
