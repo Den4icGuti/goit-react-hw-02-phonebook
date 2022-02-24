@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Form from "./Forma/Forma";
 import UserList from "./UserList/UserList";
-import data from './Forma/data/data.json';
+import data from './data/data.json';
 
 
 
@@ -21,9 +21,13 @@ class App extends Component {
     
     return (
       <>
-        <Form onSubmit={this.onHandlerSubmit} />
+        <Form onSubmit={this.onHandlerSubmit}/>
+       
         
-        <UserList title ="Contacts" item={data}/>
+            <UserList title="Contacts" item={data} />
+        
+        
+        
       </>
      );
   }
