@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
+import styles from './UserList.module.css'
 
-const userList = ({ item, title }) => {
+const userList = ({ item }) => {
   return (
-    <>
-      <h2>{title}</h2>
+    <div className={styles.ListUsers}>
+     
       <ul>
         {item.map(({ id, name, number }) => (
           <li key={id}>
@@ -12,7 +13,7 @@ const userList = ({ item, title }) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   
   );
 };
