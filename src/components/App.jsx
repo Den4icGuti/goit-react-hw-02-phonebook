@@ -41,7 +41,7 @@ class App extends Component {
         <Form onSubmit={this.onHandlerSubmit}/>
         <SearchByName title="Contacts" value={filter} onChange={this.onChangeFilter}/>
       
-        {/* {this.contacts.length  > 0 ? ('fefwfwe') :   <UserList item={data} /> } */}
+         {/* {this.contacts.length  > 0 ? ('fefwfwe') :   <UserList item={data} /> }  */}
       </div>
      );
   }
