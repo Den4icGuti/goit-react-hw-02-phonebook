@@ -1,9 +1,9 @@
 import styles from './Filter.module.css'
 
-const SearchByName = ({value,title,onChange}) => { 
+const Filter = ({value,title,onChange}) => { 
   return (
     <div className={styles.BoxFilter}>
-       <h2>{title}:</h2>
+       <h2>{title}</h2>
       <label className={styles.Filter} >Find contacts by name
         <input type='text' name={value} onChange={onChange}></input>
       </label>
@@ -12,4 +12,4 @@ const SearchByName = ({value,title,onChange}) => {
   )
 }
 
-export default SearchByName;
+export default Filter;

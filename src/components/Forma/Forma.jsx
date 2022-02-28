@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import styles from './Forma.module.css'
+import styles from './Forma.module.css';
+
 
 class Form extends Component { 
 
   state = {
-    contacts: [],
     name: '',
     number: ''
   };
 
 
-
+ 
   //===Метод меняющий состояние в полях===//
   onHandleInputData = e => { 
     const { name, value } = e.currentTarget;
@@ -19,28 +19,27 @@ class Form extends Component {
   }
 
   //===Метод который отправляет форму onSubmit===//
-  onFormSubmit = e => { 
+  onFormSubmit = e => {
     e.preventDefault()
-    this.props.onSubmit(this.state)
-
+    const { name, number } = this.state;
+    this.props.onSubmit({name,number})
     this.reset()
-  }
+  };
   
   //===Метод очищает поля формы после сабмита===//
-
-  reset = () => { 
-    this.setState({name:'',number:''})
-  }
+  reset = () => {
+    this.setState({ name: '', number: '' })
+  };
   
    render() { 
-    
+     const { name, number } = this.state;
     return (
       <form onSubmit={this.onFormSubmit} className={styles.Form}>
         <h2>Phonebook</h2>
         <label className={styles.label}>Name
           <input
             type="text"
-            value={this.state.name}
+            value={name}
             name='name'
             onChange={this.onHandleInputData}
              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -51,7 +50,7 @@ class Form extends Component {
         <label className={styles.label}>Phone
         <input
           type="tel"
-          value={this.state.number}
+          value={number}
           onChange={this.onHandleInputData}
           name='number'
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
