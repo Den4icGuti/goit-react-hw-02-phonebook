@@ -9,9 +9,6 @@ class Form extends Component {
     name: '',
     number: ''
   };
-
-
- 
   //===Метод меняющий состояние в полях===//
   onHandleInputData = e => { 
     const { name, value } = e.currentTarget;
@@ -58,7 +55,7 @@ class Form extends Component {
           required
           />
           </label>
-        <button tupe='submit'>Add contact</button>
+        <button tupe='submit' className={styles.btnSubmit}>Add contact</button>
       </form>
     );
   }

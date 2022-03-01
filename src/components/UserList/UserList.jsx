@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
 import styles from './UserList.module.css'
 
-const userList = ({ item }) => {
+const userList = ({ item, deleteContact }) => {
   return (
     <div className={styles.ListUsers}>
-     
-      <ul>
+      <ul className={styles.list}>
         {item.map(({ id, name, number }) => (
-          <li key={id}>
-            <span>{name} </span>
-            <span>{number} </span>
+          <li key={id} className={styles.item}>
+            <span className={styles.text}>{name} </span>
+            <span className={styles.text}>{number} </span>
+            <button type="button" className={styles.btnDel} onClick={() => deleteContact(id)}>Delete</button>
           </li>
         ))}
       </ul>
     </div>
-  
+    
   );
 };
 
