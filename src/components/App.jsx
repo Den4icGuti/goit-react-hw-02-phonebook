@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Form from "./Forma/Forma";
- import UserList from "./UserList/UserList";
- import Filter from "./Filter/Filter";
+import Form from './Forma/Forma';
+ import UserList from './UserList/UserList';
+ import Filter from './Filter/Filter';
 import { nanoid } from "nanoid";
 import data from './data/data.json';
+
 
 
 
@@ -15,20 +16,23 @@ class App extends Component {
   }
 
   //===Метод добавления нового пользователя===//
-  addContact = data => { 
-    // const { contacts } = this.state;
+
+  addContact = ({ name, number }) => { 
     const contact = {
       id: nanoid(),
-      name: data.name,
-      number: data.number
+      name,
+      number,
     };
-     this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
-     }))
-    
+    this.setState(({ contacts }) => { 
+      if (contacts.some((contact) => contact.name === name)) { 
+        return alert(`${name} is already in contacts.`)
+      }
+      return {
+         contacts: [contact,...contacts]
+      }
+    })
   }
-
- 
+  
   //==Метод удаления контактов по id==//
 
   onDeleteContact = (id) => {

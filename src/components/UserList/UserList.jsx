@@ -7,8 +7,8 @@ const userList = ({ item, deleteContact }) => {
       <ul className={styles.list}>
         {item.map(({ id, name, number }) => (
           <li key={id} className={styles.item}>
-            <span className={styles.text}>{name} </span>
-            <span className={styles.text}>{number} </span>
+            <span className={styles.nameUser}>{name} </span>
+            <span className={styles.numberUser}>{number} </span>
             <button type="button" className={styles.btnDel} onClick={() => deleteContact(id)}>Delete</button>
           </li>
         ))}
