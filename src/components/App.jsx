@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Form from './Forma/Forma';
- import UserList from './UserList/UserList';
- import Filter from './Filter/Filter';
+import UserList from './UserList/UserList';
+import Filter from './Filter/Filter';
 import { nanoid } from "nanoid";
 import data from './data/data.json';
 
@@ -74,5 +74,6 @@ class App extends Component {
      );
   }
 }
+
  
 export default App;

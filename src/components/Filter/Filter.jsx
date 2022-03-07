@@ -1,4 +1,6 @@
-import styles from './Filter.module.css'
+import styles from './Filter.module.css';
+
+import PropTypes from 'prop-types';
 
 const Filter = ({value,title,onChange}) => { 
   return (
@@ -10,6 +12,11 @@ const Filter = ({value,title,onChange}) => {
     </div>
     
   )
+}
+
+Filter.propTypes = {
+  title: PropTypes.string.isRequired,
+  value:PropTypes.string.isRequired
 }
 
 export default Filter;
